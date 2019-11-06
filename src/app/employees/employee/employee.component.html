@@ -1,0 +1,30 @@
+
+ <h2 mat-dialog-title class="text-center"> Employee Form </h2>
+
+ <mat-dialog-content>
+<form  #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+<div class="form-group">
+    <label> Name </label>
+    <input  name=name  #name="ngModel"[(ngModel)]="service.formData.name" class="form-control" >
+</div>
+
+<div class="form-group">
+    <label> Salary </label>
+     <input  name=salary  #salary="ngModel"[(ngModel)]="service.formData.salary" class="form-control" >
+</div>
+
+<div class="form-group">
+    <label> Age </label>
+    <input  name=age  #age="ngModel"[(ngModel)]="service.formData.age" class="form-control" >
+</div>
+
+<div class="form-group">
+        <button type="submit" class="btn btn-primary"> SUBMIT </button>
+     </div>
+
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="btn btn-sm btn-outline-warning" mat-button mat-dialog-close (click)="close()"> close</button>
+</mat-dialog-actions>

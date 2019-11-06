@@ -1,0 +1,43 @@
+
+     <div class="jumbtron">
+        <button mat-raised-button (click)="openDialog('', 'create')" class="btn btn-sm btn-outline-success" > Create New Employee  <mat-icon>add_box</mat-icon> </button>
+    </div>  
+
+<div class="jumbtron">
+<table class="content-table">
+                    <thead>
+                    <tr class= "text-center">
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Salary</th>
+                      <th>Age</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+
+                  
+<tr *ngFor ="let emp of service.list">
+    <td class= "text-center">{{emp.id}}</td>
+    <td class= "text-center">{{emp.employee_name}}</td>
+    <td class= "text-center">{{emp.employee_salary}}</td>
+    <td class= "text-center">{{emp.employee_age}}</td>
+
+
+    <td>
+
+            <mat-icon (click)= "populateForm(emp(openDialog(emp, 'edit')))">create</mat-icon>
+         <!-- <button (click)= "populateForm(emp)" class="btn btn-sm btn-outline-success">EDIT</button> -->
+    </td>
+
+    <td>
+
+        <mat-icon (click)="onDelete(emp.id)" >delete_sweep</mat-icon>
+       <!-- <button (click)="onDelete(emp.id)" class="btn btn-sm btn-outline-danger">X</button> -->
+    </td>
+
+  </tr>
+
+
+</table>
+</div>
